@@ -4,30 +4,7 @@
 if ( ! function_exists( 'printer_fonts_url' ) ) :
 
 	function printer_fonts_url() {
-		$printer_fonts_url = '';
-
-		/* Translators: If there are characters in your language that are not
-		* supported by Open Sans, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$printer_font_google = _x( 'on', 'Google font: on or off', 'printer' );
-
-		if ( 'off' !== $printer_font_google ) {
-			$printer_font_families = array();
-
-			if ( 'off' !== $printer_font_google ) {
-				$printer_font_families[] = 'Roboto:400,700';
-			}
-
-			$printer_query_args = array(
-				'family' => urlencode( implode( '|', $printer_font_families ) ),
-				'subset' => urlencode( 'latin,vietnamese' ),
-			);
-
-			$printer_fonts_url = add_query_arg( $printer_query_args, 'https://fonts.googleapis.com/css' );
-		}
-
-		return esc_url_raw( $printer_fonts_url );
+        return 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap';
 	}
 
 endif;
@@ -68,7 +45,7 @@ function printer_register_front_end() {
 	/* End main Css */
 
     /* Start main Css */
-    wp_enqueue_style( 'fontawesome-5', get_theme_file_uri( '/fonts/fontawesome/css/all.min.css' ), array(), '5.12.1' );
+    wp_enqueue_style( 'fontawesome-5', get_theme_file_uri( '/fonts/fontawesome/css/all.min.css' ), array(), '5.14.0' );
     /* End main Css */
 
 	/*  Start Style Css   */
@@ -92,20 +69,6 @@ function printer_register_front_end() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-    if ( class_exists('Woocommerce') ) :
-
-        if ( is_shop() || is_product_category() ) :
-
-            wp_enqueue_script( 'woo-quick-view', get_theme_file_uri( '/js/woo-quick-view.js' ), array(), '', true );
-
-            $printer_woo_quick_view_admin_url    =   admin_url( 'admin-ajax.php' );
-            $printer_woo_quick_view_ajax         =   array( 'url' => $printer_woo_quick_view_admin_url );
-            wp_localize_script( 'woo-quick-view', 'woo_quick_view_product', $printer_woo_quick_view_ajax );
-
-        endif;
-
-    endif;
 
 	wp_enqueue_script( 'printer-custom', get_theme_file_uri( '/js/custom.js' ), array(), '1.0.0', true );
 

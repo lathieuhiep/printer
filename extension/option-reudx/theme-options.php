@@ -162,7 +162,7 @@ Redux::setHelpSidebar( $printer_opt_name, $printer_opt_content );
 
 // -> START option background
 
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'id'                =>   'printer_theme_option',
     'title'             =>   $printer_theme->get( 'Name' ).' '.$printer_theme->get( 'Version' ),
     'customizer_width'  =>   '400px',
@@ -173,7 +173,7 @@ Redux::setSection( $printer_opt_name, array(
 
 /* Start General Options */
 
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'General Options', 'printer' ),
     'id'                =>  'printer_general',
     'desc'              =>  esc_html__( 'General all config', 'printer' ),
@@ -182,7 +182,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 // Favicon Config
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Favicon', 'printer' ),
     'id'            =>  'printer_favicon_config',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -201,7 +201,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 //Loading config
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Loading config', 'printer' ),
     'id'            =>  'printer_general_loading',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -226,7 +226,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 //Background Options
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Background', 'printer' ),
     'id'                =>  'printer_background',
     'desc'              =>  esc_html__( 'Background all config', 'printer' ),
@@ -250,7 +250,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End General Options */
 
 /* Start Header Options */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Header Options', 'printer' ),
     'id'                =>  'printer_header',
     'desc'              =>  esc_html__( 'Header all config', 'printer' ),
@@ -259,7 +259,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 //Logo Config
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Logo', 'printer' ),
     'id'            =>  'printer_logo_config',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -305,7 +305,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 // information
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Information', 'printer' ),
     'id'            =>  'printer_information_config',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -324,10 +324,10 @@ Redux::setSection( $printer_opt_name, array(
         ),
 
         array(
-            'id'        =>  'printer_information_address',
+            'id'        =>  'printer_information_contact',
             'type'      =>  'text',
-            'title'     =>  esc_html__( 'Address', 'printer' ),
-            'default'   =>  '988782, Our Street, S State.',
+            'title'     =>  esc_html__( 'Contact us (link)', 'printer' ),
+            'default'   =>  '#',
         ),
 
         array(
@@ -350,7 +350,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End Header Options */
 
 /* Start Blog Option */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Blog Options', 'printer' ),
     'id'                =>  'printer_blog_option',
     'customizer_width'  =>  '400px',
@@ -397,7 +397,7 @@ Redux::setSection( $printer_opt_name, array(
     )
 ));
 
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
 	'title'         =>  esc_html__( 'Single Post', 'printer' ),
 	'id'            =>  'printer_single_post_option',
 	'desc'          =>  esc_html__( '', 'printer' ),
@@ -451,7 +451,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End Blog Option */
 
 /* Start Social Network */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Social Network', 'printer' ),
     'id'                =>  'printer_social_network',
     'customizer_width'  =>  '400px',
@@ -491,7 +491,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End Social Network */
 
 /* Start Typography Options */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Typography', 'printer' ),
     'id'                =>  'printer_typography',
     'desc'              =>  esc_html__( 'Typography all config', 'printer' ),
@@ -500,7 +500,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 // Body font
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Body Typography', 'printer' ),
     'id'            =>  'printer_body_typography',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -534,7 +534,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 // Header font
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Custom Typography', 'printer' ),
     'id'            =>  'printer_custom_typography',
     'desc'          =>  esc_html__( '', 'printer' ),
@@ -617,7 +617,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End Typography Options */
 
 /* Start 404 Options */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( '404 Options', 'printer' ),
     'id'                =>  'printer_404',
     'desc'              =>  esc_html__( '404 page all config', 'printer' ),
@@ -659,7 +659,7 @@ Redux::setSection( $printer_opt_name, array(
 /* End 404 Options */
 
 /* Start Footer Options */
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'             =>  esc_html__( 'Footer Options', 'printer' ),
     'id'                =>  'printer_footer',
     'desc'              =>  esc_html__( 'Footer all config', 'printer' ),
@@ -668,7 +668,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 // Footer Sidebar Multi Column
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'printer' ),
     'id'            =>  'printer_footer_sidebar_multi_column',
     'subsection'    =>  true,
@@ -783,7 +783,7 @@ Redux::setSection( $printer_opt_name, array(
 ));
 
 //Copyright
-Redux::setSection( $printer_opt_name, array(
+Redux::set_section( $printer_opt_name, array(
     'title'         =>  esc_html__( 'Copyright', 'printer' ),
     'id'            =>  'printer_footer_copyright',
     'desc'          =>  esc_html__( '', 'printer' ),
