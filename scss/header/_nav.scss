@@ -1,6 +1,8 @@
+.header-right-bottom {
+  margin-top: 15px;
+}
 .main-navigation {
   background-color: #ffffff;
-  @include box-shadow(0 3px 3px -3px rgba(0, 0, 0, 0.3));
 
   .site-navbar {
     position: relative;
@@ -12,64 +14,92 @@
     }
   }
 }
-.site-logo {
-  @include flex(0 0 auto);
 
-  a {
-    display: inline-block;
-    line-height: 64px;
-    padding: 15px 0;
-  }
-}
 .site-menu {
   @include flex(1);
 
+  > ul {
+    > li {
+      margin-right: 2px;
+      padding: 3px 0;
+      border-radius: 4px;
+
+      &.menu-item-has-children {
+        border-radius: 4px 4px 0 0;
+
+        &:after {
+          position: relative;
+          right: 10px;
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          content: "\f078";
+          font-size: 10px;
+          color: $color-hover;
+          @include transition(all 0.4s ease-in-out);
+        }
+      }
+      > a {
+        color: $color-hover;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      &:hover {
+        background-color: $background-hover;
+
+        &:after,
+        > a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
   ul {
     padding: 0;
     margin: 0;
-
     li {
       position: relative;
+      @include transition(all 0.4s ease-in-out);
 
       a {
         padding: 0 15px;
         text-shadow: none;
         display: block;
-
-        &:hover {
-          background-color: transparent;
-          color: $color-hover;
-        }
-      }
-      &:last-child {
-        a {
-          padding-right: 0;
-        }
+        font-size: 12px;
       }
       .sub-menu {
-        min-width: 160px;
-        border-top: 1px solid $color-hover;
-        background-color: $border-color;
+        padding: 0 5px;
+        min-width: 180px;
+        border-top: 5px solid $background-hover;
+        border-radius: 0 4px 4px 4px;
+        background-color: #ffffff;
         position: absolute;
         top: 120%;
         left: 0;
         z-index: -1;
         visibility: hidden;
         opacity: 0;
+        @include box-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
         @include transition(all 0.4s ease-out);
 
         li {
           padding: 8px 0;
           display: block;
+          border-bottom: 1px solid #f2f2f2;
+
+          &:last-child {
+            border-bottom: 0;
+          }
 
           a {
             white-space: nowrap;
+            padding: 0 8px;
           }
           .sub-menu {
             left: 90%;
             top: -1px;
           }
           &:hover {
+            background-color: #f4f4f4;
             > .sub-menu {
               left: 100%;
             }

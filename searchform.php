@@ -9,5 +9,6 @@
         <span class="search-reader-text">
             <?php echo _x( 'Search', 'submit button', 'printer' ); ?>
         </span>
+        <i class="fas fa-search"></i>
     </button>
 </form>
