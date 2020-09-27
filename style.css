@@ -29,6 +29,7 @@ Text Domain: printer
   ## Slider
   ## Posts Grid
   ## Posts Carousel
+  ## Partners Carousel
 # Contact Form 7
 # Footer
 # Responsive
@@ -1906,6 +1907,15 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+/* Partners Carousel */
+.element-partners-carousel .item {
+  text-align: center;
+}
+
+.element-partners-carousel .item img {
+  display: inline-block;
 }
 
 /**

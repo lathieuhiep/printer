@@ -17,6 +17,9 @@
         /* Element post carousel */
         elementorFrontend.hooks.addAction( 'frontend/element_ready/printer-post-carousel.default', ElementCarouselSlider );
 
+        /* Element partners-carousel */
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/printer-partners-carousel.default', ElementCarouselSlider );
+
     } );
 
 })( jQuery );

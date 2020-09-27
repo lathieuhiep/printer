@@ -53,6 +53,7 @@ final class printer_plugin_elementor_widgets {
             'post-grid',
             'post-carousel',
             'about-text',
+            'partners-carousel'
         ];
         
         foreach ( $build_widgets_filename as $widget_filename ) :
