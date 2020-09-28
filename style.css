@@ -29,6 +29,7 @@ Text Domain: printer
   ## Slider
   ## Posts Grid
   ## Posts Carousel
+  ## Partners Carousel
 # Contact Form 7
 # Footer
 # Responsive
@@ -339,7 +340,7 @@ pre {
   display: block;
   width: 10px;
   height: 10px;
-  background-color: #000000;
+  background-color: #869791;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1906,6 +1907,67 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
+}
+
+/* Partners Carousel */
+.element-partners-carousel .owl-item {
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.element-partners-carousel .item {
+  text-align: center;
+}
+
+.element-partners-carousel .item a {
+  display: inline-block;
+}
+
+.element-partners-carousel .item img {
+  display: inline-block;
+  width: auto;
+}
+
+.element-slider-full .content-box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.element-slider-full .content-box .owl-carousel .owl-stage-outer {
+  overflow: visible;
+}
+
+.element-slider-full .content-box .item {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.element-slider-full .content-box .item a {
+  position: relative;
+  display: block;
+  height: 470px;
+  overflow: hidden;
+}
+
+.element-slider-full .content-box .item a:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.element-slider-full .content-box .item a img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.element-slider-full .content-box .owl-item:not(.active) .item {
+  opacity: 0.5;
 }
 
 /**
