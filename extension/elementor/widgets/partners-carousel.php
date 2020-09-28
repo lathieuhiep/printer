@@ -175,7 +175,7 @@ class printer_widget_partners_carousel extends Widget_Base {
             [
                 'label'     =>  esc_html__( 'Number of Item', 'printer' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  4,
+                'default'   =>  6,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,
@@ -196,7 +196,7 @@ class printer_widget_partners_carousel extends Widget_Base {
             [
                 'label'     =>  esc_html__( 'Number of Item', 'printer' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  2,
+                'default'   =>  4,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,
@@ -217,7 +217,7 @@ class printer_widget_partners_carousel extends Widget_Base {
             [
                 'label'     =>  esc_html__( 'Number of Item', 'printer' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  2,
+                'default'   =>  4,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,
@@ -238,7 +238,7 @@ class printer_widget_partners_carousel extends Widget_Base {
             [
                 'label'     =>  esc_html__( 'Number of Item', 'printer' ),
                 'type'      =>  Controls_Manager::NUMBER,
-                'default'   =>  2,
+                'default'   =>  3,
                 'min'       =>  1,
                 'max'       =>  100,
                 'step'      =>  1,
@@ -324,13 +324,10 @@ class printer_widget_partners_carousel extends Widget_Base {
             ],
         ];
 
-        $target_more = $settings['more_link']['is_external'] ? ' target=_blank' : '';
-        $nofollow_more = $settings['more_link']['nofollow'] ? ' rel=nofollow' : '';
-
         ?>
 
             <div class="element-partners-carousel">
-                <div class="custom-owl-carousel owl-carousel owl-theme" data-settings-owl='<?php echo wp_json_encode( $data_settings_owl ) ; ?>'>
+                <div class="custom-owl-carousel custom-equal-height-owl owl-carousel owl-theme" data-settings-owl='<?php echo wp_json_encode( $data_settings_owl ) ; ?>'>
                     <?php
                     foreach ( $settings['list'] as $item ) :
                         $target = $item['list_link']['is_external'] ? ' target=_blank' : '';
