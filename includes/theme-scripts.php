@@ -4,7 +4,7 @@
 if ( ! function_exists( 'printer_fonts_url' ) ) :
 
 	function printer_fonts_url() {
-        return 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap';
+        return 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap';
 	}
 
 endif;

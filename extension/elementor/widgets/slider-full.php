@@ -169,16 +169,26 @@ class printer_widget_slider_full extends Widget_Base {
 
             <div class="element-slider-full">
                 <div class="content-box">
-                    <div class="custom-owl-carousel custom-equal-height-owl owl-carousel owl-theme" data-settings-owl='<?php echo wp_json_encode( $data_settings_owl ) ; ?>'>
+                    <div class="custom-owl-carousel custom-equal-height-owl custom-style-owl owl-carousel owl-theme" data-settings-owl='<?php echo wp_json_encode( $data_settings_owl ) ; ?>'>
                         <?php
                         foreach ( $settings['list'] as $item ) :
                             $target = $item['list_link']['is_external'] ? ' target=_blank' : '';
                             $nofollow = $item['list_link']['nofollow'] ? ' rel=nofollow' : '';
                         ?>
                         <div class="item">
-                            <a class="link-product" href="<?php echo esc_url( $item['list_link']['url'] ); ?>"<?php echo esc_attr( $target . $nofollow ) ?>>
+                            <figure class="item-img">
                                 <?php echo wp_get_attachment_image( $item['list_image']['id'], 'full' ); ?>
-                            </a>
+                            </figure>
+
+                            <div class="item-content d-flex flex-column align-items-start justify-content-between">
+                                <h4 class="item-title">
+                                    <?php echo esc_html( $item['list_title'] ); ?>
+                                </h4>
+
+                                <a class="item-link" href="<?php echo esc_url( $item['list_link']['url'] ); ?>"<?php echo esc_attr( $target . $nofollow ) ?>>
+                                  <?php esc_html_e( 'Learn more' ); ?>
+                                </a>
+                            </div>
                         </div>
                         <?php endforeach; ?>
                     </div>
