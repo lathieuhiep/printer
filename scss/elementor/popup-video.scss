@@ -1,0 +1,13 @@
+.element-video-popup {
+  a {
+    display: inline-block;
+    color: #ffffff;
+    padding: 4px 10px;
+    text-align: center;
+    background-color: #FF675B;
+
+    &:hover {
+      background-color: #FF4B3C;
+    }
+  }
+}

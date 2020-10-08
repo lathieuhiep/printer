@@ -30,6 +30,7 @@ Text Domain: printer
   ## Posts Grid
   ## Posts Carousel
   ## Partners Carousel
+  ## Popup Video
 # Contact Form 7
 # Footer
 # Responsive
@@ -2009,6 +2010,19 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
 
 .custom-style-owl.owl-carousel .owl-dots .owl-dot.active span, .custom-style-owl.owl-carousel .owl-dots .owl-dot:hover span {
   background-color: #1c1c1c;
+}
+
+/* Partners Carousel */
+.element-video-popup a {
+  display: inline-block;
+  color: #ffffff;
+  padding: 4px 10px;
+  text-align: center;
+  background-color: #FF675B;
+}
+
+.element-video-popup a:hover {
+  background-color: #FF4B3C;
 }
 
 /**
