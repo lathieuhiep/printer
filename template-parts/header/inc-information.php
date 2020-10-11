@@ -33,8 +33,14 @@ $printer_information_phone     =   $printer_options['printer_information_phone']
         </li>
     </ul>
     <div class="header-search">
+        <a href="#" class="search-toggle">
+            <i class="fa fa-search"></i>
+        </a>
         <?php get_search_form(); ?>
     </div>
+    <button class="navbar-toggler">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
 </div>
 
 <?php
