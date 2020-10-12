@@ -2269,14 +2269,17 @@ form.wpcf7-form .wpcf7-submit {
   }
   .site-header .header-right-bottom {
     display: none;
-  }
-  .site-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-    background-color: #eeeeee;
-    z-index: 99;
+    bottom: 0;
+    width: 260px;
+    background-color: #1d2127;
+    z-index: 9999;
+    margin-top: 0;
+  }
+  .site-header .header-right-bottom .main-navigation {
+    background-color: transparent;
   }
   .site-menu .collapse {
     display: none !important;
@@ -2295,6 +2298,8 @@ form.wpcf7-form .wpcf7-submit {
   .site-menu ul li a {
     display: inline-block;
     padding: 15px 0;
+    color: #ffffff;
+    font-weight: 400;
   }
   .site-menu ul li .sub-menu {
     display: none;
@@ -2330,6 +2335,7 @@ form.wpcf7-form .wpcf7-submit {
   }
   .icon_menu_item_mobile {
     display: block;
+    color: #ffffff;
   }
 }
 
