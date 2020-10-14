@@ -12,7 +12,7 @@
     ?>
 
 </footer>
-
+<div class="panel-overlay"></div>
 <?php wp_footer(); ?>
 
 </body>

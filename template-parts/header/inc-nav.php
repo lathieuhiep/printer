@@ -24,4 +24,7 @@
             </div>
         </div>
     </nav>
+    <a href="#" class="nav-panel-close d-lg-none">
+        <i class="fas fa-times"></i>
+    </a>
 </div>
