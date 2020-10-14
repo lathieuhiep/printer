@@ -38,7 +38,7 @@ $printer_information_phone     =   $printer_options['printer_information_phone']
         </a>
         <?php get_search_form(); ?>
     </div>
-    <button class="navbar-toggler">
+    <button class="navbar-toggler menu-mobile d-lg-none">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
 </div>

@@ -24,8 +24,24 @@
         /* End back top */
 
         /* btn mobile Start*/
-        let menu_item_has_children  =   $( '.site-menu .menu-item-has-children' ),
-            navbar_toggler          =   $( '.site-navbar .navbar-toggler' );
+        $( '.menu-mobile' ).on('click', function () {
+            $(this).closest('.header-right').find('.header-right-bottom').addClass('active');
+            $(this).closest('body').find('.panel-overlay').addClass('active');
+        });
+
+        $('.panel-overlay').on('click', function () {
+            $(this).removeClass('active');
+            $(this).closest('body').find('.header-right-bottom').removeClass('active');
+        });
+
+        $('.nav-panel-close').on('click', function () {
+            let parentsBody = $(this).closest('body');
+
+            parentsBody.find('.header-right-bottom').removeClass('active');
+            parentsBody.find('.panel-overlay').removeClass('active');
+        });
+
+        let menu_item_has_children  =   $( '.site-menu .menu-item-has-children' );
 
         if ( menu_item_has_children.length ) {
 
