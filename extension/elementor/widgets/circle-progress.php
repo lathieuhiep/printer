@@ -36,6 +36,33 @@ class printer_widget_circle_progress extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'percent',
+            [
+                'label' => esc_html__( 'percent', 'printer' ),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                    ],
+                ],
+                'default' => [
+                    'unit' => '%',
+                    'size' => 50,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'title', [
+                'label' => esc_html__( 'Title', 'printer' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => esc_html__( 'Title' , 'printer' ),
+                'label_block' => true,
+            ]
+        );
 
         $this->end_controls_section();
 
@@ -48,7 +75,12 @@ class printer_widget_circle_progress extends Widget_Base {
     ?>
 
         <div class="element-circle">
-            <strong></strong>
+            <div class="element-chart chart" data-percent="<?php echo esc_attr( $settings['percent']['size'] ); ?>">
+                <span class="percent"></span>
+            </div>
+            <h4 class="title text-center">
+                <?php echo esc_html( $settings['title'] ); ?>
+            </h4>
         </div>
 
     <?php

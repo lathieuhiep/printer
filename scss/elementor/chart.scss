@@ -1,0 +1,28 @@
+.element-circle {
+  .element-chart {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+
+    .percent {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      font-weight: 700;
+      font-size: 17px;
+      text-align: center;
+      @include transform(translateY(-50%));
+
+      &:after {
+        content: '%';
+      }
+    }
+  }
+  .title {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 15px 0 0 0;
+  }
+}

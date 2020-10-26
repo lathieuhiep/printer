@@ -11,17 +11,26 @@
 
     /* Start Circle Progress */
     let ElementCircleProgress = function( $scope, $ ) {
-        let itemCircleProgress = $scope.find( '.element-circle' );
+        let itemCircleProgress = $scope.find( '.element-chart' );
 
-        itemCircleProgress.circleProgress({
-            value: 0.5,
-            size: 50,
-            fill: {
-                gradient: ["red", "orange"]
+        itemCircleProgress.easyPieChart({
+            barColor: '#ffffff',
+            trackColor: '',
+            scaleColor: '#ffffff',
+            scaleLength: 5,
+            lineCap: 'square',
+            lineWidth: 8,
+            size: 120,
+            rotate: 0, // in degrees
+            animate: {
+                duration: 2500,
+                enabled: true
             },
-        }).on('circle-animation-progress', function(event, progress, stepValue) {
-            $(this).find('strong').html( ( stepValue.toFixed(2).substr(1) ) * 100 + '<i>%</i>' );
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
         });
+
 
     };
 

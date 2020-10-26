@@ -31,6 +31,7 @@ Text Domain: printer
   ## Posts Carousel
   ## Partners Carousel
   ## Popup Video
+  ## Chart
 # Contact Form 7
 # Footer
 # Responsive
@@ -877,7 +878,7 @@ form.post-password-form p input[type='submit'] {
 .icon_menu_item_mobile {
   display: none;
   position: absolute;
-  right: 15px;
+  right: 25px;
   top: 5px;
   width: 12px;
   height: 20px;
@@ -2016,6 +2017,39 @@ section.widget.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-wid
   background-color: #FF4B3C;
 }
 
+/* Chart */
+.element-circle .element-chart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.element-circle .element-chart .percent {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  font-weight: 700;
+  font-size: 17px;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.element-circle .element-chart .percent:after {
+  content: '%';
+}
+
+.element-circle .title {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 15px 0 0 0;
+}
+
 /**
 # Contact Form 7
 -----------------------------------------------------------------------------*/
@@ -2329,7 +2363,7 @@ form.wpcf7-form .wpcf7-submit {
   }
   .site-menu ul li a {
     display: block;
-    padding: 5px 20px 5px 6px;
+    padding: 5px 25px 5px 6px;
     color: #ffffff;
     font-weight: 400;
   }
