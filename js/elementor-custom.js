@@ -11,12 +11,13 @@
 
     /* Start Circle Progress */
     let ElementCircleProgress = function( $scope, $ ) {
-        let itemCircleProgress = $scope.find( '.element-chart' );
+        let itemCircleProgress = $scope.find( '.element-chart' ),
+            setingOptions = itemCircleProgress.data('setting');
 
         itemCircleProgress.easyPieChart({
-            barColor: '#ffffff',
+            barColor: setingOptions['barColor'],
             trackColor: '',
-            scaleColor: '#ffffff',
+            scaleColor: setingOptions['scaleColor'],
             scaleLength: 5,
             lineCap: 'square',
             lineWidth: 8,

@@ -2,6 +2,8 @@
 
 namespace Elementor;
 
+use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class printer_widget_circle_progress extends Widget_Base {
@@ -66,16 +68,73 @@ class printer_widget_circle_progress extends Widget_Base {
 
         $this->end_controls_section();
 
+        /* Option */
+        $this->start_controls_section('style', array(
+            'label' =>  esc_html__( 'Option', 'printer' ),
+            'tab'   =>  Controls_Manager::TAB_STYLE,
+        ));
+
+        $this->add_control(
+            'barColor',
+            [
+                'label'     =>  __( 'Bar Color', 'printer' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'global' => [
+                    'default' => Global_Colors::COLOR_TEXT,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'scaleColor',
+            [
+                'label'     =>  __( 'Scale Color', 'printer' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'global' => [
+                    'default' => Global_Colors::COLOR_TEXT,
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'textColor',
+            [
+                'label'     =>  __( 'Title Color', 'printer' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-circle .title' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'percentColor',
+            [
+                'label'     =>  __( 'Percent Color', 'printer' ),
+                'type'      =>  Controls_Manager::COLOR,
+                'selectors' =>  [
+                    '{{WRAPPER}} .element-circle .percent' => 'color: {{VALUE}}',
+                ],
+            ]
+        );
+
+        $this->end_controls_section();
+
     }
 
     protected function render() {
 
         $settings =   $this->get_settings_for_display();
 
+        $data_settings_options  =   [
+            'barColor' => $settings['barColor'],
+            'scaleColor' => $settings['scaleColor']
+        ];
+
     ?>
 
         <div class="element-circle">
-            <div class="element-chart chart" data-percent="<?php echo esc_attr( $settings['percent']['size'] ); ?>">
+            <div class="element-chart chart" data-percent="<?php echo esc_attr( $settings['percent']['size'] ); ?>" data-setting='<?php echo wp_json_encode( $data_settings_options ); ?>'>
                 <span class="percent"></span>
             </div>
             <h4 class="title text-center">
@@ -88,7 +147,30 @@ class printer_widget_circle_progress extends Widget_Base {
 
     }
 
-    protected function _content_template() {}
+    protected function _content_template() {
+
+    ?>
+        <#
+        var barColor =  settings.barColor,
+            scaleColor =  settings.scaleColor,
+            settingOptions = {
+                "barColor": barColor,
+                "scaleColor": scaleColor
+            },
+            settingOptionsStr = JSON.stringify( settingOptions );
+        #>
+
+        <div class="element-circle">
+            <div class="element-chart chart" data-percent="{{ settings.percent.size }}" data-setting="{{ settingOptionsStr }}">
+                <span class="percent"></span>
+            </div>
+            <h4 class="title text-center">
+                {{{ settings.title }}}
+            </h4>
+        </div>
+
+    <?php
+    }
 
 }
 
