@@ -1,11 +1,37 @@
 (function ($) {
 
     /* Start Carousel slider */
-    let ElementCarouselSlider   =   function( $scope, $ ) {
+    let ElementCarouselSlider = function( $scope, $ ) {
 
         let element_slides = $scope.find( '.custom-owl-carousel' );
 
         $( document ).general_owlCarousel_custom( element_slides );
+
+    };
+
+    /* Start Circle Progress */
+    let ElementCircleProgress = function( $scope, $ ) {
+        let itemCircleProgress = $scope.find( '.element-chart' ),
+            setingOptions = itemCircleProgress.data('setting');
+
+        itemCircleProgress.easyPieChart({
+            barColor: setingOptions['barColor'],
+            trackColor: '',
+            scaleColor: setingOptions['scaleColor'],
+            scaleLength: 5,
+            lineCap: 'square',
+            lineWidth: 8,
+            size: 120,
+            rotate: 0, // in degrees
+            animate: {
+                duration: 2500,
+                enabled: true
+            },
+            onStep: function(from, to, percent) {
+                $(this.el).find('.percent').text(Math.round(percent));
+            }
+        });
+
 
     };
 
@@ -22,6 +48,9 @@
 
         /* Element Slide Full */
         elementorFrontend.hooks.addAction( 'frontend/element_ready/printer-slider-full.default', ElementCarouselSlider );
+
+        /* Element Slide Full */
+        elementorFrontend.hooks.addAction( 'frontend/element_ready/printer-circle-progress.default', ElementCircleProgress );
 
     } );
 

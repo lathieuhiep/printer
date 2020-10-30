@@ -55,7 +55,8 @@ final class printer_plugin_elementor_widgets {
             'about-text',
             'partners-carousel',
             'slider-full',
-            'video-popup'
+            'video-popup',
+            'circle-progress'
         ];
         
         foreach ( $build_widgets_filename as $widget_filename ) :
